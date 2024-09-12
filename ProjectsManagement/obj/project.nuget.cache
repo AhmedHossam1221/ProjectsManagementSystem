@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Il19tY8zTnIp1SVUPIYDkwY5ynSTM18BGgFvuhovWYCiRBIInEKGtcGbWXn9Ya+6R8tCf5ZQVHZz7zhwffNzmg==",
+  "dgSpecHash": "1Pjd6yolkXD9U8SkbmCoeXA4MbQ1i39aBLiYt3cPkKPf5bczhJskOmdFgwk06DcgqZS9j7EZiY+oCtetifDMhw==",
   "success": true,
-  "projectFilePath": "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagement\\ProjectsManagement.csproj",
+  "projectFilePath": "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EL-Bustan\\.nuget\\packages\\autofac\\8.1.0\\autofac.8.1.0.nupkg.sha512",
     "C:\\Users\\EL-Bustan\\.nuget\\packages\\autofac.extensions.dependencyinjection\\10.0.0\\autofac.extensions.dependencyinjection.10.0.0.nupkg.sha512",
@@ -12,7 +12,7 @@
     "C:\\Users\\EL-Bustan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\EL-Bustan\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
     "C:\\Users\\EL-Bustan\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
-    "C:\\Users\\EL-Bustan\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
+    "C:\\Users\\EL-Bustan\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\EL-Bustan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
     "C:\\Users\\EL-Bustan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\EL-Bustan\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
@@ -89,16 +89,5 @@
     "C:\\Users\\EL-Bustan\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\EL-Bustan\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.4.1 was resolved.",
-      "libraryId": "MediatR",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
