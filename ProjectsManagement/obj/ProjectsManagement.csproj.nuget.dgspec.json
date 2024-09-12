@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj": {}
+    "D:\\Ahmed Taha\\UpSkilling\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj": {}
   },
   "projects": {
-    "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj": {
+    "D:\\Ahmed Taha\\UpSkilling\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
+        "projectUniqueName": "D:\\Ahmed Taha\\UpSkilling\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
         "projectName": "ProjectsManagement",
-        "projectPath": "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
-        "packagesPath": "C:\\Users\\EL-Bustan\\.nuget\\packages\\",
-        "outputPath": "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\obj\\",
+        "projectPath": "D:\\Ahmed Taha\\UpSkilling\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
+        "packagesPath": "C:\\Users\\Taha\\.nuget\\packages\\",
+        "outputPath": "D:\\Ahmed Taha\\UpSkilling\\ProjectsManagementSystem\\ProjectsManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\EL-Bustan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Taha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -57,13 +58,13 @@
               "target": "Package",
               "version": "[10.0.0, )"
             },
+            "BCrypt.Net": {
+              "target": "Package",
+              "version": "[0.1.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.4.1, )"
-            },
-            "MediatR.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[11.0.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -115,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

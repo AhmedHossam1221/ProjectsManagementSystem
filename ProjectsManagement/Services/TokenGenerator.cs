@@ -20,8 +20,8 @@ namespace ProjectsManagement.Services
                     new Claim(ClaimTypes.Name, name)
                 }),
                 Expires = DateTime.Now.AddHours(1),
-                Issuer = "UpSkilling",
-                Audience = "UpSkilling-Users",
+                Issuer = "ProjectManagement",
+                Audience = "ProjectManagement-Users",
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Constants.SecretKey)), SecurityAlgorithms.HmacSha256Signature)
             };
 

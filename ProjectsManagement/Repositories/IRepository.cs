@@ -1,20 +1,21 @@
 using ProjectsManagement.Models;
+using System.Linq.Expressions;
 
 
 namespace ProjectsManagement.Repositories
 {
     public interface IRepository<T> where T : BaseModel
     {
-       
-        IQueryable<T> GetAll();
-        T GetByID(int id);
-        T Add(T entity);
-        T Update(T entity);
-        void Delete(T entity);
-        void Delete(int id);
-        public void AddRange(List<T> entities);
-        public IQueryable<T> GetAllPagination(int pageNumber, int pageSize);
-
-        void SaveChanges();
+        IQueryable<T> GetAllAsync();
+        Task<T> GetByIDAsync(int id);
+        Task<IQueryable<T>> GetAllPaginationAsync(int pageNumber, int pageSize);
+        Task<T> AddAsync(T entity);
+        Task AddRangeAsync(List<T> entities);
+        Task<T> UpdateAsync(T entity);
+        Task DeleteAsync(T entity);
+        Task DeleteAsync(int id);
+        Task SaveChangesAsync();
+        IQueryable<T> GetAllAsync(Expression<Func<T, bool>> predicate);
+        Task<T> First(Expression<Func<T, bool>> predicate);
     }
 }

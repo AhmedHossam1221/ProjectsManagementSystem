@@ -1,5 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using ProjectsManagement.Data;
 using ProjectsManagement.Models;
+using System.Linq.Expressions;
 
 
 namespace ProjectsManagement.Repositories
@@ -13,53 +15,67 @@ namespace ProjectsManagement.Repositories
             _context = context;
         }
 
-        public T Add(T entity)
+        public async Task<T> AddAsync(T entity)
         {
-            _context.Set<T>().Add(entity);
+            await _context.Set<T>().AddAsync(entity);
             return entity;
         }
 
-        public void Delete(T entity)
+        public async Task DeleteAsync(T entity)
         {
             entity.IsDeleted = true;
-            Update(entity);
+            await UpdateAsync(entity);
         }
 
-
-        public void AddRange(List<T> entities)
+        public async Task AddRangeAsync(List<T> entities)
         {
-            _context.Set<T>().AddRange(entities);
+            await _context.Set<T>().AddRangeAsync(entities);
         }
-        public IQueryable<T> GetAll()
+        public IQueryable<T> GetAllAsync()
         {
-            return _context.Set<T>().Where(a => a.IsDeleted != true);
-        }
-
-        public T GetByID(int id)
-        {
-            return _context.Set<T>().FirstOrDefault(a => a.IsDeleted != true && a.ID == id);
-        }
-        public IQueryable<T> GetAllPagination(int pageNumber, int pageSize)
-        {
-            var re = _context.Set<T>().Where(a => a.IsDeleted != true).Skip((pageNumber - 1) * pageSize)
-                                           .Take(pageSize);
-            return re;
-        }
-        public void Delete(int id)
-        {
-            T entity = _context.Find<T>(id);
-            Delete(entity);
-        }
-        public void SaveChanges()
-        {
-            _context.SaveChanges();
+            IQueryable<T> query = _context.Set<T>().Where(a => a.IsDeleted != true);
+            return query;
         }
 
-        public T Update(T entity)
+        public async Task<T> GetByIDAsync(int id)
+        {
+            return await _context.Set<T>().FirstOrDefaultAsync(a => a.IsDeleted != true && a.ID == id);
+        }
+        public async Task<IQueryable<T>> GetAllPaginationAsync(int pageNumber, int pageSize)
+        {
+            var query = _context.Set<T>()
+                .Where(a => a.IsDeleted != true)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize);
+
+            return await Task.FromResult(query);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            T entity = await _context.FindAsync<T>(id);
+            await DeleteAsync(entity);
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<T> UpdateAsync(T entity)
         {
             _context.Set<T>().Update(entity);
-            return entity;
+            return await Task.FromResult(entity);
         }
 
+        public IQueryable<T> GetAllAsync(Expression<Func<T, bool>> predicate)
+        {
+            return GetAllAsync().Where(predicate);
+        }
+
+        public async Task<T> First(Expression<Func<T, bool>> predicate)
+        {
+            return await GetAllAsync(predicate).FirstOrDefaultAsync();
+        }
     }
 }

@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using ProjectsManagement.Data;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace ProjectsManagement
 {
@@ -20,8 +21,8 @@ namespace ProjectsManagement
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
 
@@ -63,13 +64,11 @@ namespace ProjectsManagement
                 });
             });
 
-
-
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
             builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
             builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
                 builder.RegisterModule(new AutoFacModule()));
-
 
             builder.Services.AddAuthentication(opts =>
             {
@@ -83,17 +82,15 @@ namespace ProjectsManagement
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = "UpSkilling",
-                    ValidAudience = "UpSkilling-Users",
+                    ValidIssuer = "ProjectManagement",
+                    ValidAudience = "ProjectManagement-Users",
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Constants.SecretKey))
                 };
             });
 
             builder.Services.AddAuthorization();
 
-
             var app = builder.Build();
-
 
             app.UseAuthentication();
             app.UseAuthorization();
@@ -109,9 +106,6 @@ namespace ProjectsManagement
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
-            app.UseAuthorization();
-
 
             app.MapControllers();
 

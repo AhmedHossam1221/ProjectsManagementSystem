@@ -33,7 +33,7 @@ namespace ProjectsManagement.Middleware
                     File.WriteAllText("D:\\Log.txt", $"Error happened: {ex.Message}");
                 }
 
-                var result = ResultViewModel<bool>.Failure(errorCode, message);
+                var result = ResultViewModel.Faliure(message);
 
                 await context.Response.WriteAsJsonAsync(result);
             }
