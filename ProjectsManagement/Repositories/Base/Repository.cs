@@ -77,5 +77,10 @@ namespace ProjectsManagement.Repositories.Base
         {
             return await GetAllAsync(predicate).FirstOrDefaultAsync();
         }
+
+        public async Task<T> FirstAsyncWithTracking(Expression<Func<T, bool>> predicate)
+        {
+            return await GetAllAsync(predicate).AsTracking().FirstOrDefaultAsync();
+        }
     }
 }
