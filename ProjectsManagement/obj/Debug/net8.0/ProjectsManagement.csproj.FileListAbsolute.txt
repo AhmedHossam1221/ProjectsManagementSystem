@@ -159,7 +159,6 @@ D:\iti\AhmedMamdoh(BootCamb)\task\ProjectsManagement\ProjectsManagementSystem\Pr
 D:\iti\AhmedMamdoh(BootCamb)\task\ProjectsManagement\ProjectsManagementSystem\ProjectsManagement\bin\Debug\net8.0\Humanizer.dll
 D:\iti\AhmedMamdoh(BootCamb)\task\ProjectsManagement\ProjectsManagementSystem\ProjectsManagement\bin\Debug\net8.0\MediatR.dll
 D:\iti\AhmedMamdoh(BootCamb)\task\ProjectsManagement\ProjectsManagementSystem\ProjectsManagement\bin\Debug\net8.0\MediatR.Contracts.dll
-D:\iti\AhmedMamdoh(BootCamb)\task\ProjectsManagement\ProjectsManagementSystem\ProjectsManagement\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 D:\iti\AhmedMamdoh(BootCamb)\task\ProjectsManagement\ProjectsManagementSystem\ProjectsManagement\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\iti\AhmedMamdoh(BootCamb)\task\ProjectsManagement\ProjectsManagementSystem\ProjectsManagement\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\iti\AhmedMamdoh(BootCamb)\task\ProjectsManagement\ProjectsManagementSystem\ProjectsManagement\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -730,3 +729,5 @@ C:\Users\zhran\Source\Repos\ProjectsManagementSystem\ProjectsManagement\obj\Debu
 C:\Users\zhran\Source\Repos\ProjectsManagementSystem\ProjectsManagement\obj\Debug\net8.0\ProjectsManagement.pdb
 C:\Users\zhran\Source\Repos\ProjectsManagementSystem\ProjectsManagement\obj\Debug\net8.0\ProjectsManagement.genruntimeconfig.cache
 C:\Users\zhran\Source\Repos\ProjectsManagementSystem\ProjectsManagement\obj\Debug\net8.0\ref\ProjectsManagement.dll
+D:\iti\AhmedMamdoh(BootCamb)\task\ProjectsManagement\ProjectsManagementSystem\ProjectsManagement\bin\Debug\net8.0\libman.json
+D:\iti\AhmedMamdoh(BootCamb)\task\ProjectsManagement\ProjectsManagementSystem\ProjectsManagement\bin\Debug\net8.0\BCrypt.Net.dll

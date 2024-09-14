@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zhran\\Source\\Repos\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj": {}
+    "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zhran\\Source\\Repos\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj": {
+    "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zhran\\Source\\Repos\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
+        "projectUniqueName": "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
         "projectName": "ProjectsManagement",
-        "projectPath": "C:\\Users\\zhran\\Source\\Repos\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
-        "packagesPath": "C:\\Users\\zhran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zhran\\Source\\Repos\\ProjectsManagementSystem\\ProjectsManagement\\obj\\",
+        "projectPath": "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
+        "packagesPath": "C:\\Users\\EL-Bustan\\.nuget\\packages\\",
+        "outputPath": "D:\\iti\\AhmedMamdoh(BootCamb)\\task\\ProjectsManagement\\ProjectsManagementSystem\\ProjectsManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\zhran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\EL-Bustan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -116,7 +115,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

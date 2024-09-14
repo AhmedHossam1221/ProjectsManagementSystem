@@ -16,7 +16,7 @@ namespace ProjectsManagement.CQRS.Users.Commands
         }
         public async Task<ResultDTO> Handle(VerifyOTPCommand request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.FirstAsync(u => u.Email == request.Email);
+            var user = await _userRepository.FirstAsyncWithTracking(u => u.Email == request.Email);
 
             if (user == null || (user.OTPExpiration != null && user.OTPExpiration < DateTime.Now) || (user.OTP != null && user.OTP != request.OTP))
             {
