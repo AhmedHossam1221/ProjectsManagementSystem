@@ -26,7 +26,7 @@ namespace ProjectsManagement.CQRS.Users.Commands
         public async Task<ResultDTO> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
             var spec = new UserSpecification(request.loginRequestDTO.Email);
-            var user = await _userRepository.First(spec.Criteria);
+            var user = await _userRepository.FirstAsync(spec.Criteria);
 
             if (user is null || !BCrypt.Net.BCrypt.Verify(request.loginRequestDTO.Password, user.PasswordHash))
             {

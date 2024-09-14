@@ -4448,11 +4448,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ahmed Taha\\UpSkilling\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
+      "projectUniqueName": "D:\\Ahmed Taha\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
       "projectName": "ProjectsManagement",
-      "projectPath": "D:\\Ahmed Taha\\UpSkilling\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
+      "projectPath": "D:\\Ahmed Taha\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
       "packagesPath": "C:\\Users\\Taha\\.nuget\\packages\\",
-      "outputPath": "D:\\Ahmed Taha\\UpSkilling\\ProjectsManagementSystem\\ProjectsManagement\\obj\\",
+      "outputPath": "D:\\Ahmed Taha\\ProjectsManagementSystem\\ProjectsManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Taha\\AppData\\Roaming\\NuGet\\NuGet.Config",
