@@ -50,7 +50,7 @@ namespace ProjectsManagement.Controllers
             return ResultViewModel.Sucess(resultDTO.Data, resultDTO.Message);
         }
 
-        [HttpPost("VerifyAccount")]
+        [HttpPost]
         public async Task<ResultViewModel> VerifyAccount(string email, string OTP)
         {
             var resultDTO = await _mediator.Send(new VerifyOTPCommand(email,OTP));
