@@ -2,7 +2,7 @@ using ProjectsManagement.Models;
 using System.Linq.Expressions;
 
 
-namespace ProjectsManagement.Repositories
+namespace ProjectsManagement.Repositories.Base
 {
     public interface IRepository<T> where T : BaseModel
     {

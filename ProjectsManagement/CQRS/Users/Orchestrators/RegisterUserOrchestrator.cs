@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ProjectsManagement.CQRS.Email.Command;
 using ProjectsManagement.CQRS.UserRoles.Commands;
 using ProjectsManagement.CQRS.Users.Commands;
 using ProjectsManagement.DTOs;

@@ -2,7 +2,7 @@
 using ProjectsManagement.DTOs;
 using ProjectsManagement.Helpers;
 using ProjectsManagement.Models;
-using ProjectsManagement.Repositories;
+using ProjectsManagement.Repositories.Base;
 
 namespace ProjectsManagement.CQRS.Users.Commands
 {

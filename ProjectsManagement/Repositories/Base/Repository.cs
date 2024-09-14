@@ -4,7 +4,7 @@ using ProjectsManagement.Models;
 using System.Linq.Expressions;
 
 
-namespace ProjectsManagement.Repositories
+namespace ProjectsManagement.Repositories.Base
 {
     public class Repository<T> : IRepository<T> where T : BaseModel
     {

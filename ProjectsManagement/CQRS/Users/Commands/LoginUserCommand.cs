@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using ProjectsManagement.DTOs;
 using ProjectsManagement.Models;
-using ProjectsManagement.Repositories;
+using ProjectsManagement.Repositories.Base;
 using ProjectsManagement.Services;
 
 

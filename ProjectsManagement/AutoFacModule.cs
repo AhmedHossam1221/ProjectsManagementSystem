@@ -2,7 +2,7 @@
 using AutoMapper;
 using ProjectsManagement.Data;
 using ProjectsManagement.Profiles;
-using ProjectsManagement.Repositories;
+using ProjectsManagement.Repositories.Base;
 
 namespace ProjectsManagement
 {
