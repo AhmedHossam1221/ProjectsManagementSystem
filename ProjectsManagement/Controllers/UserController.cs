@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjectsManagement.CQRS.Users.Commands;
 using ProjectsManagement.Helpers;
+using ProjectsManagement.Models;
 using ProjectsManagement.ViewModels;
 using ProjectsManagement.ViewModels.Auth;
 
@@ -22,7 +23,7 @@ namespace ProjectsManagement.Controllers
         public async Task<ResultViewModel> Register(RegisterRequestViewModel registerRequestViewModel)
         {
             var registerRequestDTO = registerRequestViewModel.MapOne<RegisterRequestDTO>();
-            
+
             var resultDTO = await _mediator.Send(new RegisterUserCommand(registerRequestDTO));
 
             if (!resultDTO.IsSuccess) 

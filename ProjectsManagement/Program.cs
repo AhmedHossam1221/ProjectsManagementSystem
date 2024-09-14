@@ -91,6 +91,7 @@ namespace ProjectsManagement
             builder.Services.AddAuthorization();
 
             var app = builder.Build();
+            app.UseStatusCodePagesWithReExecute("/Errors/{0}");
 
             app.UseAuthentication();
             app.UseAuthorization();

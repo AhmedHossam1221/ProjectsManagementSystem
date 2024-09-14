@@ -17,6 +17,7 @@ namespace ProjectsManagement.CQRS.Users.Commands
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
+        public string Country { get; set; }
     };
 
     public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, ResultDTO>
@@ -53,7 +54,7 @@ namespace ProjectsManagement.CQRS.Users.Commands
             await _userRepository.AddAsync(user);
 
             await _userRepository.SaveChangesAsync();
-
+         
             return ResultDTO.Sucess(true, "User registred successfully!");
         }
 
