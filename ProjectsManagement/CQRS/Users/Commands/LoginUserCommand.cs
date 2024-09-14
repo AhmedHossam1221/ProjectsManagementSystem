@@ -3,6 +3,7 @@ using ProjectsManagement.DTOs;
 using ProjectsManagement.Models;
 using ProjectsManagement.Repositories.Base;
 using ProjectsManagement.Services;
+using ProjectsManagement.Specification.UserSpecifications;
 
 
 namespace ProjectsManagement.CQRS.Users.Commands
@@ -24,28 +25,18 @@ namespace ProjectsManagement.CQRS.Users.Commands
 
         public async Task<ResultDTO> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.FirstAsync(u => u.Email == request.loginRequestDTO.Email);
+            var spec = new UserSpecification(request.loginRequestDTO.Email);
+            var user = await _userRepository.First(spec.Criteria);
 
-            if (user is null || !await CheckUserPasswordAsync(request.loginRequestDTO))
+            if (user is null || !BCrypt.Net.BCrypt.Verify(request.loginRequestDTO.Password, user.PasswordHash))
             {
                 return ResultDTO.Faliure("Email or Password is incorrect");
             }
 
             var token = TokenGenerator.GenerateToken(user.ID.ToString(), user.FullName, "1");
-            
+
             return ResultDTO.Sucess(token, "User Login Successfully!");
         }
 
-        public async Task<bool> CheckUserPasswordAsync(LoginRequestDTO requestDTO)
-        {
-            var user = await _userRepository.FirstAsync(u => u.Email == requestDTO.Email);
-
-            if (user is null || !BCrypt.Net.BCrypt.Verify(requestDTO.Password, user.PasswordHash))
-            {
-                return false;
-            }
-
-            return true;
-        }
     }
 }

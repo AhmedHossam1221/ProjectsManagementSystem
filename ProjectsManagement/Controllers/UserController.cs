@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProjectsManagement.CQRS.Users.Commands;
 using ProjectsManagement.CQRS.Users.Orchestrators;
 using ProjectsManagement.Helpers;
+using ProjectsManagement.Models;
 using ProjectsManagement.ViewModels;
 using ProjectsManagement.ViewModels.Auth;
 
