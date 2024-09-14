@@ -4443,19 +4443,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Taha\\.nuget\\packages\\": {}
+    "C:\\Users\\zhran\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ahmed Taha\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
+      "projectUniqueName": "C:\\Users\\zhran\\Source\\Repos\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
       "projectName": "ProjectsManagement",
-      "projectPath": "D:\\Ahmed Taha\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
-      "packagesPath": "C:\\Users\\Taha\\.nuget\\packages\\",
-      "outputPath": "D:\\Ahmed Taha\\ProjectsManagementSystem\\ProjectsManagement\\obj\\",
+      "projectPath": "C:\\Users\\zhran\\Source\\Repos\\ProjectsManagementSystem\\ProjectsManagement\\ProjectsManagement.csproj",
+      "packagesPath": "C:\\Users\\zhran\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\zhran\\Source\\Repos\\ProjectsManagementSystem\\ProjectsManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Taha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\zhran\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4557,7 +4557,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

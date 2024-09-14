@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using ProjectsManagement.Data;
 using System.Diagnostics;
 using System.Reflection;
+using Autofac.Core;
+using Microsoft.Extensions.Configuration;
 
 namespace ProjectsManagement
 {
@@ -87,6 +89,11 @@ namespace ProjectsManagement
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Constants.SecretKey))
                 };
             });
+
+
+            //configreSettingsForEmail
+            builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
+            builder.Services.AddTransient<EmailSenderHelper>();
 
             builder.Services.AddAuthorization();
 
