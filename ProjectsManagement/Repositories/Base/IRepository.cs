@@ -17,7 +17,5 @@ namespace ProjectsManagement.Repositories.Base
         Task SaveChangesAsync();
         IQueryable<T> GetAllAsync(Expression<Func<T, bool>> predicate);
         Task<T> FirstAsync(Expression<Func<T, bool>> predicate);
-        Task<T> FirstAsyncWithTracking(Expression<Func<T, bool>> predicate);
-
     }
 }
