@@ -16,6 +16,7 @@ namespace ProjectsManagement
             builder.Register(context => new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<UserProfile>();
+                cfg.AddProfile<RoleProfile>();
             }).CreateMapper()).As<IMapper>().InstancePerLifetimeScope();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ProjectsManagement.CQRS.UserRoles.Commands;
 using ProjectsManagement.CQRS.Users.Commands;
 using ProjectsManagement.Models;
 using ProjectsManagement.ViewModels.Auth;
@@ -14,6 +15,8 @@ namespace ProjectsManagement.Profiles
 
             CreateMap<LoginRequestViewModel, LoginRequestDTO>().ReverseMap();
             CreateMap<LoginRequestDTO, User>().ReverseMap();
+
+            CreateMap<UserRoleDTO, UserRole>().ReverseMap();
         }
     }
 }

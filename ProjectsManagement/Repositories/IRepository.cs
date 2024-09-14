@@ -16,6 +16,6 @@ namespace ProjectsManagement.Repositories
         Task DeleteAsync(int id);
         Task SaveChangesAsync();
         IQueryable<T> GetAllAsync(Expression<Func<T, bool>> predicate);
-        Task<T> First(Expression<Func<T, bool>> predicate);
+        Task<T> FirstAsync(Expression<Func<T, bool>> predicate);
     }
 }

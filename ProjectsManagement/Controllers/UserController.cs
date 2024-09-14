@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ProjectsManagement.CQRS.Users.Commands;
+using ProjectsManagement.CQRS.Users.Orchestrators;
 using ProjectsManagement.Helpers;
 using ProjectsManagement.ViewModels;
 using ProjectsManagement.ViewModels.Auth;
@@ -23,14 +24,14 @@ namespace ProjectsManagement.Controllers
         {
             var registerRequestDTO = registerRequestViewModel.MapOne<RegisterRequestDTO>();
             
-            var resultDTO = await _mediator.Send(new RegisterUserCommand(registerRequestDTO));
+            var resultDTO = await _mediator.Send(new RegisterUserOrchestrator(registerRequestDTO));
 
             if (!resultDTO.IsSuccess) 
             {
                 return ResultViewModel.Faliure(resultDTO.Message);
             }
 
-            return ResultViewModel.Sucess(resultDTO.Data, resultDTO.Message);
+            return ResultViewModel.Sucess(resultDTO.Message);
         }
 
         [HttpPost]

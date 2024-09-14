@@ -8,16 +8,13 @@ namespace ProjectsManagement.CQRS.Users.Commands
 {
     public record RegisterUserCommand(RegisterRequestDTO registerRequestDTO) : IRequest<ResultDTO>;
     
-    public class RegisterRequestDTO
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string UserName { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
-    };
+    public record RegisterRequestDTO(string FirstName, 
+        string LastName, 
+        string UserName,
+        string Email,
+        string PhoneNumber,
+        string Password,
+        string ConfirmPassword);
 
     public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, ResultDTO>
     {
@@ -32,14 +29,14 @@ namespace ProjectsManagement.CQRS.Users.Commands
 
         public async Task<ResultDTO> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
         {
-            var result = await _userRepository.First(u => u.Email == request.registerRequestDTO.Email);
+            var result = await _userRepository.FirstAsync(u => u.Email == request.registerRequestDTO.Email);
 
             if (result is not null)
             {
                 return ResultDTO.Faliure("Email is already registered!");
             }
 
-            result = await _userRepository.First(user => user.UserName == request.registerRequestDTO.UserName);
+            result = await _userRepository.FirstAsync(user => user.UserName == request.registerRequestDTO.UserName);
 
             if (result is not null) 
             {
@@ -50,11 +47,11 @@ namespace ProjectsManagement.CQRS.Users.Commands
 
             user.PasswordHash = CreatePasswordHash(request.registerRequestDTO.Password);
 
-            await _userRepository.AddAsync(user);
+            user = await _userRepository.AddAsync(user);
 
             await _userRepository.SaveChangesAsync();
 
-            return ResultDTO.Sucess(true, "User registred successfully!");
+            return ResultDTO.Sucess(user, "User registred successfully!");
         }
 
         private string CreatePasswordHash(string password)
