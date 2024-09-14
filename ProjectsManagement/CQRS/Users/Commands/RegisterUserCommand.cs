@@ -20,11 +20,14 @@ namespace ProjectsManagement.CQRS.Users.Commands
     {
         IRepository<User> _userRepository;
         IMediator _mediator;
+        EmailSenderHelper _emailSenderHelper;
 
-        public RegisterUserCommandHandler(IRepository<User> userRepository, IMediator mediator)
+        public RegisterUserCommandHandler(IRepository<User> userRepository, IMediator mediator, EmailSenderHelper emailSender)
         {
             _userRepository = userRepository;
             _mediator = mediator;
+            _emailSenderHelper = emailSender;
+            
         }
 
         public async Task<ResultDTO> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
@@ -43,13 +46,19 @@ namespace ProjectsManagement.CQRS.Users.Commands
                 return ResultDTO.Faliure("Username is alerady registered!");
             }
 
-            var user = request.registerRequestDTO.MapOne<User>();
+            // Generate OTP
+            var otp = GenerateOTP();
 
+            // Send OTP
+            await SendOTPAsync(request.registerRequestDTO.Email, otp);
+
+            var user = request.registerRequestDTO.MapOne<User>();
             user.PasswordHash = CreatePasswordHash(request.registerRequestDTO.Password);
+            user.OTP = otp;
+            user.OTPExpiration = DateTime.Now.AddMinutes(5);
 
             user = await _userRepository.AddAsync(user);
-
-            await _userRepository.SaveChangesAsync();
+            await _userRepository.SaveChangesAsync(); 
 
             return ResultDTO.Sucess(user, "User registred successfully!");
         }
@@ -57,6 +66,20 @@ namespace ProjectsManagement.CQRS.Users.Commands
         private string CreatePasswordHash(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password);
+        }
+
+        private string GenerateOTP()
+        {
+            Random random = new Random();
+            return random.Next(100000, 999999).ToString();
+        }
+
+        private async Task SendOTPAsync(string email, string otp)
+        {
+            string subject = "Verify your Account";
+            string body = $"Your Verification code is {otp}. It will expire in 5 minutes.";
+            await _emailSenderHelper.SendEmailAsync(email, subject, body);
+
         }
     }
 }
