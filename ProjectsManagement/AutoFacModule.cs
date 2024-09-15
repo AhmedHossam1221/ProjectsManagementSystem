@@ -2,7 +2,7 @@
 using AutoMapper;
 using ProjectsManagement.Data;
 using ProjectsManagement.Profiles;
-using ProjectsManagement.Repositories;
+using ProjectsManagement.Repositories.Base;
 
 namespace ProjectsManagement
 {
@@ -16,6 +16,7 @@ namespace ProjectsManagement
             builder.Register(context => new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<UserProfile>();
+                cfg.AddProfile<RoleProfile>();
             }).CreateMapper()).As<IMapper>().InstancePerLifetimeScope();
         }
     }

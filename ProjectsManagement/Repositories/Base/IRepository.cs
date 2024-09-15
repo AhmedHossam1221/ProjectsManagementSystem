@@ -2,7 +2,7 @@ using ProjectsManagement.Models;
 using System.Linq.Expressions;
 
 
-namespace ProjectsManagement.Repositories
+namespace ProjectsManagement.Repositories.Base
 {
     public interface IRepository<T> where T : BaseModel
     {
@@ -16,6 +16,7 @@ namespace ProjectsManagement.Repositories
         Task DeleteAsync(int id);
         Task SaveChangesAsync();
         IQueryable<T> GetAllAsync(Expression<Func<T, bool>> predicate);
-        Task<T> First(Expression<Func<T, bool>> predicate);
+        Task<T> FirstAsync(Expression<Func<T, bool>> predicate);
+        Task<T> FirstAsyncWithTracking(Expression<Func<T, bool>> predicate);
     }
 }

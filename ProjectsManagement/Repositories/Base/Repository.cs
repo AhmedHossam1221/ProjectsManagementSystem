@@ -4,7 +4,7 @@ using ProjectsManagement.Models;
 using System.Linq.Expressions;
 
 
-namespace ProjectsManagement.Repositories
+namespace ProjectsManagement.Repositories.Base
 {
     public class Repository<T> : IRepository<T> where T : BaseModel
     {
@@ -73,9 +73,14 @@ namespace ProjectsManagement.Repositories
             return GetAllAsync().Where(predicate);
         }
 
-        public async Task<T> First(Expression<Func<T, bool>> predicate)
+        public async Task<T> FirstAsync(Expression<Func<T, bool>> predicate)
         {
             return await GetAllAsync(predicate).FirstOrDefaultAsync();
+        }
+
+        public async Task<T> FirstAsyncWithTracking(Expression<Func<T, bool>> predicate)
+        {
+            return await GetAllAsync(predicate).AsTracking().FirstOrDefaultAsync();
         }
     }
 }

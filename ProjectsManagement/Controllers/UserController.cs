@@ -1,11 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ProjectsManagement.CQRS.Users.Commands;
-<<<<<<< Updated upstream
-=======
 using ProjectsManagement.CQRS.Users.Orchestrators;
 using ProjectsManagement.DTOs;
->>>>>>> Stashed changes
 using ProjectsManagement.Helpers;
 using ProjectsManagement.Models;
 using ProjectsManagement.ViewModels;
@@ -28,15 +25,15 @@ namespace ProjectsManagement.Controllers
         public async Task<ResultViewModel> Register(RegisterRequestViewModel registerRequestViewModel)
         {
             var registerRequestDTO = registerRequestViewModel.MapOne<RegisterRequestDTO>();
-
-            var resultDTO = await _mediator.Send(new RegisterUserCommand(registerRequestDTO));
+            
+            var resultDTO = await _mediator.Send(new RegisterUserOrchestrator(registerRequestDTO));
 
             if (!resultDTO.IsSuccess) 
             {
                 return ResultViewModel.Faliure(resultDTO.Message);
             }
 
-            return ResultViewModel.Sucess(resultDTO.Data, resultDTO.Message);
+            return ResultViewModel.Sucess(resultDTO.Message);
         }
 
         [HttpPost]
@@ -53,8 +50,6 @@ namespace ProjectsManagement.Controllers
 
             return ResultViewModel.Sucess(resultDTO.Data, resultDTO.Message);
         }
-<<<<<<< Updated upstream
-=======
 
         [HttpPost]
         public async Task<ResultViewModel> VerifyAccount(string email, string OTP)
@@ -67,6 +62,7 @@ namespace ProjectsManagement.Controllers
 
             return ResultViewModel.Sucess(resultDTO.Data, resultDTO.Message);
         }
+
         [HttpPost]
         public async Task<ResultViewModel> ForgotPassword(ForgetPasswordViewModel forgetPasswordViewModel)
         {
@@ -77,6 +73,7 @@ namespace ProjectsManagement.Controllers
 
             return ResultViewModel.Sucess(result.Data, result.Message);
         }
+        
         [HttpPost]
         public async Task<ResultViewModel> ResetPassword(ResetPasswordViewModel resetPasswordViewModel)
         {
@@ -87,7 +84,5 @@ namespace ProjectsManagement.Controllers
 
             return ResultViewModel.Sucess(result.Data, result.Message);
         }
-
->>>>>>> Stashed changes
     }
 }

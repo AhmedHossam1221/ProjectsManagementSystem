@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ProjectsManagement.CQRS.UserRoles.Commands;
 using ProjectsManagement.CQRS.Users.Commands;
 using ProjectsManagement.Models;
 using ProjectsManagement.ViewModels.Auth;
@@ -14,8 +15,6 @@ namespace ProjectsManagement.Profiles
 
             CreateMap<LoginRequestViewModel, LoginRequestDTO>().ReverseMap();
             CreateMap<LoginRequestDTO, User>().ReverseMap();
-<<<<<<< Updated upstream
-=======
 
             CreateMap<UserRoleDTO, UserRole>().ReverseMap();
 
@@ -24,7 +23,6 @@ namespace ProjectsManagement.Profiles
 
             CreateMap<ResetPasswordViewModel, ResetPasswordDTO>().ReverseMap();
             CreateMap<ResetPasswordDTO, PasswordChangeRequest>().ReverseMap();
->>>>>>> Stashed changes
         }
     }
 }
