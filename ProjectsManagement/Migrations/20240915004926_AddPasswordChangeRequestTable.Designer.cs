@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjectsManagement.Data;
 
@@ -11,9 +12,11 @@ using ProjectsManagement.Data;
 namespace ProjectsManagement.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20240915004926_AddPasswordChangeRequestTable")]
+    partial class AddPasswordChangeRequestTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,7 +88,6 @@ namespace ProjectsManagement.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<string>("Country")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
@@ -102,19 +104,19 @@ namespace ProjectsManagement.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsVerified")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-<<<<<<< Updated upstream
-=======
                     b.Property<string>("OTP")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("OTPExpiration")
                         .HasColumnType("datetime2");
 
->>>>>>> Stashed changes
                     b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -159,8 +161,6 @@ namespace ProjectsManagement.Migrations
                     b.HasIndex("UserID");
 
                     b.ToTable("UserRoles");
-<<<<<<< Updated upstream
-=======
                 });
 
             modelBuilder.Entity("ProjectsManagement.Models.PasswordChangeRequest", b =>
@@ -170,7 +170,6 @@ namespace ProjectsManagement.Migrations
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
->>>>>>> Stashed changes
                 });
 
             modelBuilder.Entity("ProjectsManagement.Models.UserRole", b =>

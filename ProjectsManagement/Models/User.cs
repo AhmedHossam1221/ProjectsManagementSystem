@@ -11,5 +11,6 @@
         public string PhoneNumber { get; set; }
         public string Country { get; set; }
         public ICollection<UserRole> UserRoles { get; set; }
+        public ICollection<PasswordChangeRequest> PasswordChangeRequests { get; set;}
     }
 }

@@ -8,6 +8,7 @@ namespace ProjectsManagement.CQRS.Users.Commands
 {
     public record RegisterUserCommand(RegisterRequestDTO registerRequestDTO) : IRequest<ResultDTO>;
     
+<<<<<<< Updated upstream
     public class RegisterRequestDTO
     {
         public string FirstName { get; set; }
@@ -19,6 +20,16 @@ namespace ProjectsManagement.CQRS.Users.Commands
         public string ConfirmPassword { get; set; }
         public string Country { get; set; }
     };
+=======
+    public record RegisterRequestDTO(string FirstName, 
+        string LastName, 
+        string UserName,
+        string Email,
+        string PhoneNumber,
+        string Password,
+        string ConfirmPassword,
+        string Country);
+>>>>>>> Stashed changes
 
     public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, ResultDTO>
     {
