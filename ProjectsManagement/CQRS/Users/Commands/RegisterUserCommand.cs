@@ -7,14 +7,15 @@ using ProjectsManagement.Repositories.Base;
 namespace ProjectsManagement.CQRS.Users.Commands
 {
     public record RegisterUserCommand(RegisterRequestDTO registerRequestDTO) : IRequest<ResultDTO>;
-    
+ 
     public record RegisterRequestDTO(string FirstName, 
         string LastName, 
         string UserName,
         string Email,
         string PhoneNumber,
         string Password,
-        string ConfirmPassword);
+        string ConfirmPassword,
+        string Country);
 
     public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, ResultDTO>
     {

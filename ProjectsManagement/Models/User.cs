@@ -15,5 +15,6 @@
         public DateTime? OTPExpiration { get; set; }
         public bool IsVerified { get; set; } = false;
         public ICollection<UserRole> UserRoles { get; set; }
+        public ICollection<PasswordChangeRequest> PasswordChangeRequests { get; set;}
     }
 }

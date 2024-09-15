@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjectsManagement.CQRS.Users.Commands;
 using ProjectsManagement.CQRS.Users.Orchestrators;
+using ProjectsManagement.DTOs;
 using ProjectsManagement.Helpers;
 using ProjectsManagement.Models;
 using ProjectsManagement.ViewModels;
@@ -60,6 +61,28 @@ namespace ProjectsManagement.Controllers
             }
 
             return ResultViewModel.Sucess(resultDTO.Data, resultDTO.Message);
+        }
+
+        [HttpPost]
+        public async Task<ResultViewModel> ForgotPassword(ForgetPasswordViewModel forgetPasswordViewModel)
+        {
+            var forgetPasswordDTO = forgetPasswordViewModel.MapOne<ForgetPasswordDTO>();
+            var result = await _mediator.Send(new ForgetPasswordCommand(forgetPasswordDTO));
+            if (!result.IsSuccess)
+                return ResultViewModel.Faliure(result.Message);
+
+            return ResultViewModel.Sucess(result.Data, result.Message);
+        }
+        
+        [HttpPost]
+        public async Task<ResultViewModel> ResetPassword(ResetPasswordViewModel resetPasswordViewModel)
+        {
+            var resetPasswordDTO = resetPasswordViewModel.MapOne<ResetPasswordDTO>();
+            var result = await _mediator.Send(new ResetPasswordCommand(resetPasswordDTO));
+            if (!result.IsSuccess)
+                return ResultViewModel.Faliure(result.Message);
+
+            return ResultViewModel.Sucess(result.Data, result.Message);
         }
     }
 }

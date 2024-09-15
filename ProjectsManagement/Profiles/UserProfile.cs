@@ -17,6 +17,12 @@ namespace ProjectsManagement.Profiles
             CreateMap<LoginRequestDTO, User>().ReverseMap();
 
             CreateMap<UserRoleDTO, UserRole>().ReverseMap();
+
+            CreateMap<ForgetPasswordViewModel, ForgetPasswordDTO>().ReverseMap();
+            CreateMap<ForgetPasswordDTO, PasswordChangeRequest>().ReverseMap();
+
+            CreateMap<ResetPasswordViewModel, ResetPasswordDTO>().ReverseMap();
+            CreateMap<ResetPasswordDTO, PasswordChangeRequest>().ReverseMap();
         }
     }
 }
