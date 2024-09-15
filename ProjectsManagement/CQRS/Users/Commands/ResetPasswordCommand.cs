@@ -42,7 +42,7 @@ namespace ProjectsManagement.CQRS.Users.Commands
             }
          
 
-            var user = await _userRepository.FirstAsyncWithTracking(u => u.Email == request.ResetPasswordDTO.Email && u.ID==passwordChangeRequest.ID);
+            var user = await _userRepository.FirstAsyncWithTracking(u => u.Email == request.ResetPasswordDTO.Email && u.ID==passwordChangeRequest.UserID);
             if (user == null)
             {
                 return ResultDTO.Faliure("User or email not found.");

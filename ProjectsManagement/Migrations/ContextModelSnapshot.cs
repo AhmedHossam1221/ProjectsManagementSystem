@@ -50,7 +50,7 @@ namespace ProjectsManagement.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("PasswordChanges");
+                    b.ToTable("PasswordChanges", (string)null);
                 });
 
             modelBuilder.Entity("ProjectsManagement.Models.Role", b =>
@@ -109,7 +109,6 @@ namespace ProjectsManagement.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OTP")
-
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("OTPExpiration")
@@ -158,7 +157,7 @@ namespace ProjectsManagement.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("UserRoles");
+                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("ProjectsManagement.Models.PasswordChangeRequest", b =>
@@ -168,8 +167,6 @@ namespace ProjectsManagement.Migrations
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("ProjectsManagement.Models.UserRole", b =>

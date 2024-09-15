@@ -372,3 +372,8 @@ FodyWeavers.xsd
 *.dll
 *.props
 *.vs/
+
+bin
+obj
+*.dll
+*.exe
